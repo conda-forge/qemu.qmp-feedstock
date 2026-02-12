@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
 
 outputs:
   - package:
@@ -32,7 +32,7 @@ outputs:
         # - qemu-tui = qemu.qmp.qmp_tui:main
     requirements:
       host:
-        - python ${{ python_min }}
+        - python ${{ python_min }}.*
         - pip
         - setuptools
         - setuptools_scm
@@ -52,7 +52,7 @@ outputs:
         # qemu-tui --help
         requirements:
           run:
-            - python ${{ python_min }}
+            - python ${{ python_min }}.*
 
     # Naming convention for the github repo
   - package:
