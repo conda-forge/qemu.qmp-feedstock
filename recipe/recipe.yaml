@@ -1,6 +1,6 @@
 context:
   name: qemu.qmp
-  version: "0.0.3"
+  version: "0.0.5"
   python_min: "3.7"
 
 recipe:
@@ -8,12 +8,12 @@ recipe:
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: cbc88fbcc115ee943d84447d172c642da120220451416c2f621acf33df1e1010
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/qemu_qmp-${{ version }}.tar.gz
+  sha256: 1d1b9a9a5d57edfe2de3a1d888612823b09aff946951a902e79e9655a2aabbfd
 
 build:
   noarch: python
-  number: 1
+  number: 0
 
 outputs:
   - package:
@@ -43,11 +43,11 @@ outputs:
     tests:
       - python:
           imports:
-          - qemu.qmp
+            - qemu.qmp
           pip_check: true
       - script: |
-            qemu-shell --help
-            qemu-shell-wrap --help
+          qemu-shell --help
+          qemu-shell-wrap --help
         # This requires missing conda package urwind
         # qemu-tui --help
         requirements:
@@ -66,7 +66,7 @@ outputs:
     tests:
       - python:
           imports:
-          - qemu.qmp
+            - qemu.qmp
           pip_check: true
 
 about:
