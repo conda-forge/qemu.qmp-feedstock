@@ -1,6 +1,6 @@
 context:
   name: qemu.qmp
-  version: "0.0.5"
+  version: "0.0.6"
 
 recipe:
   name: qemu.qmp-split
@@ -8,7 +8,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/qemu_qmp-${{ version }}.tar.gz
-  sha256: 1d1b9a9a5d57edfe2de3a1d888612823b09aff946951a902e79e9655a2aabbfd
+  sha256: a3c25d871fab549122b2340810de1f99481002c942a2132476b062aacdbf6e92
 
 build:
   noarch: python
